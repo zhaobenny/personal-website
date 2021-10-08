@@ -1,17 +1,17 @@
 import Navbar from '../components/navbar'
 import Head from 'next/head'
 
-const About = () => {
+const Projects = () => {
   return (
     <>
       <Head>
-        <title>Benny Zhao | About</title>
+        <title>Benny Zhao | Projects</title>
       </Head>
       <div>
-        <h1>About</h1>
+        <h1>Projects</h1>
       </div>
     </>
   )
 }
 
-export default About;
+export default Projects;
