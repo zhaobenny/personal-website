@@ -10,7 +10,7 @@ const Resume = () => {
         <title>Benny Zhao | Resume</title>
       </Head>
       <div className='flex flex-col items-center mt-3'>
-        <a href='./Resume.pdf'>
+        <a href='./Resume.pdf' download='./Resume.pdf' target='_blank'>
           <Document file="./Resume.pdf" className='border-gray-800 dark:border-0 border-4'>
             <Page pageNumber={1} />
           </Document>
