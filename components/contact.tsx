@@ -19,6 +19,7 @@ export default function Contact() {
     if (!captchaCode){
       return;
     }
+    setSubmitted(true)
     const data = {
       name,
       email,
@@ -38,7 +39,10 @@ export default function Contact() {
         setName("")
         setEmail("")
         setMessage("")
-        alert("Thanks for the message!");
+        alert("Thanks for the message! 👍");
+      } else {
+        setSubmitted(false)
+        alert("Something went wrong 😥");
       }
     })
   }

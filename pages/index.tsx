@@ -25,7 +25,9 @@ const Home: NextPage = () => {
             <dd className="mb-16">
               <p className="text-justify">
               I am currently an undergraduate student at Simon Fraser University, pursing a degree in Computing Science. As of now, I am in my 4th year.
-              I always enjoyed tinkering with technology since I was young, and also wanted to tinker more with it. So when I found myself exposed to programming at a high school infomation technology class, I found that it was a passion of mine to follow into university.
+              I always enjoyed tinkering with technology since I was young, and also wanted to tinker more with it.
+              So when I found myself exposed to programming at a high school infomation technology class, I found that it was exciting and something to be passionate about.
+              Thus my area of study in university was decided.
               </p>
             </dd>
             <dt className="mb-4">
@@ -35,7 +37,7 @@ const Home: NextPage = () => {
             </dt>
             <dd className="mb-16">
               <p className="text-justify">
-                Bubble tea is good. Also, the renewal price was cheap.
+                Bubble tea is good. Also, I paid good price for domain. I am using the domain to its fullest potential!
               </p>
             </dd>
             <dt className="mb-4">
@@ -46,6 +48,7 @@ const Home: NextPage = () => {
             <dd className="mb-16">
               <p className="text-justify">
                 Check out my <Link href="/projects"><a className='underline hover:opacity-90'>projects</a></Link> page where you can see some of the recent things I been working on!
+                <br/> Take a look at my <Link href="/projects"><a className='underline hover:opacity-90'>resume</a></Link> too!
               </p>
             </dd>
           </dl>
