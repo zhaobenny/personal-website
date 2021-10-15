@@ -1,9 +1,8 @@
 import Repocard from '../components/repocard'
 import Head from 'next/head'
 import axios from 'axios';
-import { GetStaticProps } from 'next';
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: any = async (context : any) => {
   try {
     let token: any = process.env.GITHUB_AUTH_TOKEN
     const username = "zhaobenny";

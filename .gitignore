@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# resume no need git track
+/public/Resume.pdf

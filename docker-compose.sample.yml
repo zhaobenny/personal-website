@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  personalwebsite:
+    container_name: personalwebsite
+    image: puredefinition/personal-website
+    restart: unless-stopped
+    ports:
+      - 3000
+    environment:
+      - GITHUB_AUTH_TOKEN=insertkey
+      - HCAPTCHA_SECRET_KEY=insertkey
+      - SENDGRID_API_KEY=insertkey
+    volumes:
+      - type: bind
+        source: ./Resume.pdf
+        target: /app/public/Resume.pdf
+networks:
+  default:
+    external:
+      name: selfhost
+
