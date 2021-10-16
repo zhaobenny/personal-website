@@ -55,7 +55,7 @@ export default function Contact() {
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Relevant messages or questions, bug reports are welcome!</p>
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
-          <form className=""  onSubmit={e => handleSubmit(e)}>
+          <form className=""  onSubmit={e => handleSubmit(e)} id="contact">
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">
