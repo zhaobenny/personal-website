@@ -50,19 +50,12 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.shapes{
-  overflow-x:hidden;
-}
-
-.shapes svg {
-  overflow: hidden;
-  max-width: 10%;
-}
 
 .bounce {
-  -moz-animation: bounce 2s infinite;
-  -webkit-animation: bounce 2s infinite;
-  animation: bounce 2s infinite;
+  will-change: transform;
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
 }
 
 @keyframes bounce {
@@ -70,11 +63,16 @@ body {
     transform: translateY(0);
   }
   40% {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
   }
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
+}
+
+.shapes svg {
+  overflow: hidden;
+  max-width: 10%;
 }
 
 $total: 10;
@@ -83,19 +81,25 @@ $total: 10;
   .shapes svg:nth-child(#{$i}) {
     will-change: transform;
     position: absolute;
-    bottom: -45vh;
+    bottom: -25vh;
+
     animation: raise#{$i} 6 + random(15) + s linear infinite;
     animation-delay: random(5) - 5 + s;
     transform: scale(.3 * $i + 2 - .6) rotate(random(360) + deg);
     z-index: -1*$i - 9;
 
-    left: random(120) * 1% - 20;
+    left: (random(120) * 1%) - 20;
+    // keep below to make it responsive somehow
     @media screen and (max-width: 3000px) {
-      left: random(100) * 1% - 20;
+      left: (random(100) * 1%) - 20;
     }
     @media screen and (max-width: 1700px) {
-      left: random(10) * 1%;
+      left: (random(10) * 1%);
       transform: scale(.3 * $i - .6) rotate(random(360) + deg);
+    }
+    @media screen and (max-width: 360px) {
+      left: (random(2) * 0.5%);
+      transform: scale(.1 * $i - .6) rotate(random(360) + deg);
     }
 
     @keyframes raise#{$i} {
