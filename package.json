@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -14,8 +15,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.15",
     "@hcaptcha/react-hcaptcha": "^0.3.7",
+    "@next/bundle-analyzer": "^11.1.2",
     "@sendgrid/mail": "^7.4.7",
     "axios": "^0.22.0",
+    "cross-env": "^7.0.3",
     "next": "11.1.2",
     "next-themes": "0.0.15",
     "nprogress": "^0.2.0",
