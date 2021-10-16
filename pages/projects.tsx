@@ -41,12 +41,12 @@ const Projects = ((props : any) => {
       <div className='flex flex-col items-center mx-3'>
           <h1 className="text-4xl lg:text-6xl mt-2 h-10 font-semibold">Projects</h1>
           <p className="text-sm sm:text-lg mt-2 mb-2 lg:mt-10 lg:mb-12">Current repos from my Github</p>
-          <div className="grid sm:gap-4 sm:grid-cols-3 xl:mb-44 2xl:mb-80">
+          <section className="grid sm:gap-4 sm:grid-cols-3 xl:mb-44 2xl:mb-80">
             {props.data &&
               props.data.map((repo: any, id: any) => (
                 <Repocard repo={repo} key={id} />
               ))}
-          </div>
+          </section>
         </div>
     </>
   )

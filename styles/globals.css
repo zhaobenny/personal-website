@@ -2,7 +2,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 .wave {
     animation-name: wave-animation;
     animation-duration: 3.5s;
@@ -29,4 +28,21 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.shapes {
+  z-index: -1;
+}
+.shapes svg {
+  margin: 0;
+	animation: animate 20s linear infinite;
+}
 
+@keyframes animate {
+	0% {
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+	}
+	100% {
+		transform: translateY(-1000px) rotate(360deg);
+		opacity: 0;
+	}
+}

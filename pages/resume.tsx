@@ -30,14 +30,14 @@ const Resume = () => {
       <Head>
         <title>Benny Zhao | Resume</title>
       </Head>
-      <div className='flex flex-col items-center mt-2' ref={documentWrapperRef}>
+      <section className='flex flex-col items-center mt-2' ref={documentWrapperRef}>
         <a href='./Resume.pdf' download='./Resume.pdf' target='_blank'>
           <Document file="./Resume.pdf" className='border-gray-800 dark:border-0 border-4'>
             <Page className="w-full" pageNumber={1} width={size/2.5 || 500}/>
           </Document>
           <button className="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none rounded text-lg dark:mt-0 mt-3 hover:opacity-90" >Save as PDF</button>
         </a>
-      </div>
+      </section>
     </>
   )
 }
