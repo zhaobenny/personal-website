@@ -1,0 +1,89 @@
+/* ./styles/globals.pcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.wave {
+  animation-name: wave-animation;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(11deg);
+  }
+  20% {
+    transform: rotate(-7deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.gradient {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(rgb(43, 142, 172), rgb(153, 0, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.shapes{
+  overflow-x:hidden;
+}
+
+.shapes svg {
+  overflow: hidden;
+  max-width: 10%;
+}
+
+$total: 10;
+@for $i from 1 through $total {
+
+  .shapes svg:nth-child(#{$i}) {
+    position: absolute;
+    bottom: -45vh;
+    animation: raise#{$i} 6 + random(15) + s linear infinite;
+    animation-delay: random(5) - 5 + s;
+    transform: scale(.3 * $i + 2 - .6) rotate(random(360) + deg);
+    z-index: -1*$i - 9;
+
+    left: random(120) * 1% - 20;
+    @media screen and (max-width: 3000px) {
+      left: random(100) * 1% - 20;
+    }
+    @media screen and (max-width: 1700px) {
+      left: random(10) * 1%;
+      transform: scale(.3 * $i - .6) rotate(random(360) + deg);
+    }
+
+    @keyframes raise#{$i} {
+      to {
+        bottom: 200vh;
+        transform: scale(.3 * $i + 2 - .6) rotate(random(360) + deg);
+      }
+    }
+  }
+}

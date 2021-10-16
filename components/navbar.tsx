@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav>
-      <header className="text-black-100 dark:text-gray-300 body-font">
+      <header className="text-black-100 dark:text-gray-300 body-font backdrop-blur">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link href="/">
             <a className="flex title-font font-medium items-center text-black-100 dark:text-white mb-4 md:mb-0">

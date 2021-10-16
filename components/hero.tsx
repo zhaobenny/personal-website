@@ -4,7 +4,7 @@ import FloatingShapes from "./floatingShapes";
 export default function Hero() {
   return (
     <>
-      <div className="h-screen flex justify-center items-center md:space-x-32 z-10">
+      <div className="h-screen flex justify-center items-center md:space-x-32 z-10 backdrop-blur-sm">
         <div className="text-black dark:text-white">
                 <div className="text-2xl sm:text-4xl lg:text-6xl mt-2 h-10 font-semibold">
                   <span className="wave">👋</span> Hello there,
