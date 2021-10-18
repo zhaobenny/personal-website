@@ -18,7 +18,8 @@ export default function Questions() {
           <p className="text-justify">
           I am currently an undergraduate student at Simon Fraser University, pursing a degree in Computing Science. As of now, I am in my 4th year.
           I always enjoyed tinkering with technology since I was young, and also wanted to tinker more with it.
-          So when I found myself exposed to programming at a high school infomation technology class, I found that it was exciting and something to be passionate about.
+          So when I found myself exposed to programming at a high school infomation technology class,
+          I found that it was exciting and something to be passionate about.
           Thus my area of study in university was decided.
           </p>
         </dd>

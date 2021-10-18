@@ -29,7 +29,9 @@ export default function Navbar() {
             <Link href="/resume">
               <a className="mr-5 dark:hover:text-white">Resume</a>
             </Link>
-            <a className="mr-5 dark:hover:text-white opacity-50">Setup</a>
+            <Link href="/#">
+              <a className="mr-5 dark:hover:text-white opacity-50">Setup</a>
+            </Link>
             <button aria-label="Toggle Dark Mode" type="button" className="bg-pink-50 dark:bg-gray-800 border-0  py-1  px-3 focus:outline-none hover:bg-gray-300 dark:hover:bg-gray-700 rounded text-base md:mt-0" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               {mounted && (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" className="w-4 h-4 text-yellow-500 dark:text-yellow-500">
