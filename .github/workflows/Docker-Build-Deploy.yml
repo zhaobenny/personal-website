@@ -24,24 +24,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
-      - name: Setup node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          
-      - name: Install packages
-        run: npm ci
-        
-      - name: Create env file
-        run: |
-          touch .env
-          echo GITHUB_AUTH_TOKEN=${{ secrets.GITHUBAUTH_TOKEN }} >> .env
-          cat .env
-        
-      - name: Build it all
-        run: npm run build
-      
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -50,7 +32,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
       -
         name: Login to DockerHub
-        uses: docker/login-action@v1 
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
@@ -61,5 +43,4 @@ jobs:
         with:
           push: true
           tags: puredefinition/personal-website:prod
-      
-      
+          build-args: GITHUB=${{ secrets.GITHUBAUTH_TOKEN }}
