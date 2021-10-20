@@ -5,7 +5,7 @@ export default function Questions() {
   return (
     <div className="py-20 px-4 bg-pink-50 dark:bg-gray-900">
     <div className="mx-auto max-w-6xl flex flex-col md:flex-row">
-      <h2 className="mr-8 w-full md:w-1/3 text-3xl font-extrabold leading-9" id="FAQ">
+      <h2 className="mr-8 mb-3 w-full md:w-1/3 text-3xl font-extrabold leading-9" id="FAQ">
           About Me
       </h2>
       <dl className="w-full md:w-2/3">
