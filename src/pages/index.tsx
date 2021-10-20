@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import Hero from '../components/hero'
-import Questions from "../components/questions"
-const Contact : any = dynamic(
-  () => import("../components/contact"),  { loading: () => <p>...</p> });
+import Hero from '../components/home/hero'
+import Questions from "../components/home/questions"
+const Contact: any = dynamic(
+  () => import("../components/home/contact"), { loading: () => <p>...</p> });
 
 
 const Home: NextPage = () => {
@@ -13,9 +13,9 @@ const Home: NextPage = () => {
       <Head>
         <title>Benny Zhao | Home</title>
       </Head>
-      <Hero/>
-      <Questions/>
-      <Contact/>
+      <Hero />
+      <Questions />
+      <Contact />
     </section>
   )
 }

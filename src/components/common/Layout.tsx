@@ -11,11 +11,11 @@ const Layout = ({ children }: { children: any }) => {
         <meta name="description" content="A personal website for Benny Zhao" />
         <meta name="author" content="Benny Zhao" />
       </Head>
-      <div className="content">
+      <section>
         <Navbar />
         {children}
         <Footer />
-      </div>
+      </section>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
-import Layout from '../components/Layout'
+import Layout from '../components/common/Layout'
 import { ThemeProvider } from "next-themes";
 import { useEffect } from 'react';
 import NProgress from "nprogress";
@@ -18,12 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       Router.events.off('routeChangeError', NProgress.done)
     }
   }, [])
-    return (
-      <ThemeProvider attribute="class">
-        <Layout>
-          <Component {...pageProps}/>
-        </Layout>
-      </ThemeProvider>
-    )
+  return (
+    <ThemeProvider attribute="class">
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  )
 }
 export default MyApp

@@ -1,5 +1,5 @@
 import React from "react";
-import FloatingShapes from "./floatingShapes";
+import FloatingShapes from "../ambientBackground/floatingShapes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
