@@ -22,23 +22,23 @@ export default function Hero() {
           </h1>
           <div className="text-2xl sm:text-2xl lg:text-4xl text-center space-x-10 sm:space-x-6 h-10">
             <a href="https://github.com/zhaobenny">
-              <FontAwesomeIcon icon={faGithub} className="hover:opacity-50" />
+              <FontAwesomeIcon icon={faGithub} className="hover:opacity-50 umami--click--github-icon" />
             </a>
             <a href="https://www.linkedin.com/in/zhaobenny00/">
-              <FontAwesomeIcon icon={faLinkedin} className="hover:opacity-50" />
+              <FontAwesomeIcon icon={faLinkedin} className="hover:opacity-50 umami--click--linkedin-icon" />
             </a>
             <AnchorLink href="#contact">
-              <FontAwesomeIcon icon={faEdit} className="hover:opacity-50" />
+              <FontAwesomeIcon icon={faEdit} className="hover:opacity-50 umami--click--contact-icon" />
             </AnchorLink>
             <a href="mailto:benny_zhao@sfu.ca">
-              <FontAwesomeIcon icon={faEnvelope} className="hover:opacity-50" />
+              <FontAwesomeIcon icon={faEnvelope} className="hover:opacity-50 umami--click--mail-icon" />
             </a>
           </div>
           <div className="p-20 sm:text-2xl lg:text-4xl text-center h-10">
             <AnchorLink href="#FAQ">
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className="bounce opacity-75 mx-auto hover:opacity-10"
+                className="bounce opacity-75 mx-auto hover:opacity-10 umami--click--FAQ-button"
               />
             </AnchorLink>
           </div>

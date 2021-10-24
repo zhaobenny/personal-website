@@ -55,8 +55,8 @@ export default function Questions() {
           </dt>
           <dd className="mb-14">
             <p className="text-justify">
-              Check out my <Link href="/projects"><a className='underline hover:opacity-90'>projects</a></Link> page where you can see some of the recent things I been working on!
-              <br /> Take a look at my <Link href="/projects"><a className='underline hover:opacity-90'>resume</a></Link> too!
+              Check out my <Link href="/projects"><a className='underline hover:opacity-90 umami--click--FAQ-projects-link'>projects</a></Link> page where you can see some of the recent things I been working on!
+              <br /> Take a look at my <Link href="/resume"><a className='underline hover:opacity-90 umami--click--FAQ-resume-link'>resume</a></Link> too!
             </p>
           </dd>
         </dl>

@@ -8,8 +8,7 @@ export default function Footer() {
           </svg>
           <span className="ml-3 text-xl">Bottom Text</span>
         </p>
-        <p className="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">© 2021 Benny Zhao —
-          <a href="https://github.com/zhaobenny" className="text-gray-500 ml-1" target="_blank" rel="noopener noreferrer">@zhaobenny</a>
+          <a href="https://github.com/zhaobenny" className="text-gray-500 ml-1 umami--click--footer-link" target="_blank" rel="noopener noreferrer">@zhaobenny</a>
         </p>
       </div>
     </footer>

@@ -15,24 +15,27 @@ export default function Navbar() {
       <header className="text-black-100 dark:text-gray-300 body-font backdrop-blur">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link href="/">
-            <a className="flex title-font font-medium items-center text-black-100 dark:text-white mb-4 md:mb-0">
+            <a className="flex title-font font-medium items-center text-black-100 dark:text-white mb-4 md:mb-0 umami--click--home-link">
               <span className="ml-3 text-2xl gradient">Benny Zhao</span>
             </a>
           </Link>
           <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700	flex flex-wrap items-center text-base justify-center">
             <Link href="/">
-              <a className="mr-5 dark:hover:text-white">Home</a>
+              <a className="mr-5 dark:hover:text-white umami--click--home-link">Home</a>
             </Link>
             <Link href="/projects">
-              <a className="mr-5 dark:hover:text-white">Projects</a>
+              <a className="mr-5 dark:hover:text-white umami--click--projects-link">Projects</a>
             </Link>
             <Link href="/resume">
-              <a className="mr-5 dark:hover:text-white">Resume</a>
+              <a className="mr-5 dark:hover:text-white umami--click--resume-link">Resume</a>
             </Link>
             <Link href="/#">
-              <a className="mr-5 dark:hover:text-white opacity-50">Setup</a>
+              <a className="mr-5 dark:hover:text-white opacity-50 umami--click--setup-link">Setup</a>
             </Link>
-            <button aria-label="Toggle Dark Mode" type="button" className="bg-pink-50 dark:bg-gray-800 border-0  py-1  px-3 focus:outline-none hover:bg-gray-300 dark:hover:bg-gray-700 rounded text-base md:mt-0" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            <button aria-label="Toggle Dark Mode" type="button" className="bg-pink-50 dark:bg-gray-800
+            border-0  py-1  px-3 focus:outline-none
+            hover:bg-gray-300 dark:hover:bg-gray-700 rounded text-base md:mt-0 umami--click--dark-mode-toggle"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
               {mounted && (
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" className="w-4 h-4 text-yellow-500 dark:text-yellow-500">
                   {theme === "dark" ? (
