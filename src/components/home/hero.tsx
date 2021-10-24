@@ -12,12 +12,12 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 export default function Hero() {
   return (
     <>
-      <div className="h-screen-90 lg:h-screen-95 flex flex-grow justify-center items-center z-10 backdrop-blur-sm">
+      <div className="flex min-h-screen justify-center items-center z-10 backdrop-blur-sm">
         <div className="text-black dark:text-white font-semibold">
-          <h2 className="text-2xl sm:text-4xl lg:text-6xl h-min-content">
+          <h2 className="text-2xl sm:text-4xl lg:text-6xl select-none">
             <span className="wave">👋</span> Hello there,
           </h2>
-          <h1 className="text-4xl sm:text-6xl lg:text-8xl md:mt-5 pb-5 text-center gradient h-min-content">
+          <h1 className="text-4xl sm:text-6xl lg:text-8xl md:mt-5 pb-5 select-none text-center text-transparent bg-clip-text bg-gradient-to-bl from-blue-400 to-fuchsia-600">
             I am Benny Zhao
           </h1>
           <div className="text-2xl sm:text-2xl lg:text-4xl text-center space-x-10 sm:space-x-6 h-10">
@@ -38,7 +38,7 @@ export default function Hero() {
             <AnchorLink href="#FAQ">
               <FontAwesomeIcon
                 icon={faChevronDown}
-                className="bounce opacity-75 mx-auto hover:opacity-10 umami--click--FAQ-button"
+                className="animate-none md:animate-bounce opacity-75 mx-auto hover:opacity-10 umami--click--FAQ-button"
               />
             </AnchorLink>
           </div>

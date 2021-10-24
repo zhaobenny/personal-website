@@ -3,10 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+
 
 .wave {
   animation-name: wave-animation;
@@ -43,14 +40,6 @@ body {
   }
 }
 
-.gradient {
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(rgb(43, 142, 172), rgb(153, 0, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .bounce {
   will-change: transform;
   -moz-animation: bounce 3s infinite;
@@ -70,9 +59,13 @@ body {
   }
 }
 
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .shapes svg {
-  overflow: hidden;
   max-width: 10%;
+  overflow: hidden;
 }
 
 $total: 10;
@@ -81,20 +74,17 @@ $total: 10;
   .shapes svg:nth-child(#{$i}) {
     will-change: transform;
     position: absolute;
-    bottom: -25vh;
+    bottom: -50vh;
 
     animation: raise#{$i} 6 + random(15) + s linear infinite;
-    animation-delay: random(5) - 5 + s;
+    animation-delay: random(6) - 5 + s;
     transform: scale(.3 * $i + 2 - .6) rotate(random(360) + deg);
     z-index: -1*$i - 9;
 
-    left: (random(120) * 1%) - 20;
+    left: (random(80) * 1%);
     // keep below to make it responsive somehow
-    @media screen and (max-width: 3000px) {
-      left: (random(100) * 1%) - 20;
-    }
     @media screen and (max-width: 1700px) {
-      left: (random(10) * 1%);
+      left: (random(50) * 1%);
       transform: scale(.3 * $i - .6) rotate(random(360) + deg);
     }
     @media screen and (max-width: 360px) {

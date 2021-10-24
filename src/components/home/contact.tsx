@@ -83,7 +83,7 @@ export default function Contact() {
             </div>
             <div className="p-2">
               <button disabled={submitted} type="submit"
-                className={"flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none rounded text-lg umami--click--contact-button"
+                className={"flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none rounded text-lg umami--click--contact-submit"
                   + ((!message || !email || !name) || submitted ? "opacity-80" : "opacity-100")}>
                 Submit</button>
               <HCaptcha size="invisible" ref={hcaptchaRef} sitekey="868616a4-952d-47ef-ab69-a4cbdf96a921" onVerify={(token) => postMessage(token)} />

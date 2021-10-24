@@ -10,7 +10,7 @@ export default function Custom404() {
                 404 - Page Not Found</h1>
             <p className="text-xl lg:text-2xl pb-1 mt-5">
                 Let&apos;s go somewhere more <Link href="/">
-                    <a className="underline hover: umami--click--404-home-link">
+                    <a className="underline hover:opacity-90 umami--click--404-home-link">
                          familiar
                     </a>
                 </Link>.

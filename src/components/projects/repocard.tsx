@@ -9,7 +9,7 @@ export default function repocard(data: any) {
       <p className="text-base font-normal my-4 dark:text-gray-400 text-gray-700">
         {data.repo.description}
       </p>
-      <a href={data.repo.clone_url} className="flex flex-row umami--click--GitHub-project-link">
+      <a href={data.repo.clone_url} className="flex flex-row hover:opacity-90 umami--click--GitHub-project-link">
         <p>
           View Repository{" "}
           <span className="transform group-hover:translate-x-2 transition duration-300">
