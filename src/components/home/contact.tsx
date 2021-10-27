@@ -2,12 +2,12 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 import React, { useRef, useState } from 'react'
 import axios from 'axios'
 
-
 export default function Contact() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
   const hcaptchaRef = useRef(null);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -19,7 +19,7 @@ export default function Contact() {
     if (!captchaCode) {
       return;
     }
-    setSubmitted(true)
+    setLoading(true)
     const data = {
       name,
       email,
@@ -34,13 +34,14 @@ export default function Contact() {
       data: JSON.stringify(data)
     }).then((res) => {
       if (res.status === 200) {
+        setLoading(false)
         setSubmitted(true)
         setName("")
         setEmail("")
         setMessage("")
-        alert("Thanks for the message! 👍");
       } else {
-        setSubmitted(false)
+        setSubmitted(false);
+        setLoading(false)
         alert("Something went wrong 😥");
       }
     })
@@ -54,7 +55,7 @@ export default function Contact() {
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Relevant messages or questions, bug reports are welcome!</p>
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
-          <form className="" onSubmit={e => handleSubmit(e)} id="contact">
+          <form className={`${(loading || submitted) ? "hidden" : "block"}`} onSubmit={e => handleSubmit(e)} id="contact">
             <div className="flex flex-wrap -m-2">
               <div className="p-2 w-1/2">
                 <div className="relative">
@@ -83,12 +84,18 @@ export default function Contact() {
             </div>
             <div className="p-2">
               <button disabled={submitted} type="submit"
-                className={"flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none rounded text-lg umami--click--contact-submit"
-                  + ((!message || !email || !name) || submitted ? "opacity-80" : "opacity-100")}>
+                className={`flex mx-auto text-white border-0 py-2 px-8 focus:outline-none
+                 rounded bg-yellow-500 text-lg umami--click--contact-submit ${(!message || !email || !name || loading) ? "opacity-80 " : "opacity-100"}`}>
                 Submit</button>
               <HCaptcha size="invisible" ref={hcaptchaRef} sitekey="868616a4-952d-47ef-ab69-a4cbdf96a921" onVerify={(token) => postMessage(token)} />
             </div>
           </form>
+          <section className={`${loading ? "block" : "hidden"} flex justify-center items-center`}>
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-purple-500"></div>
+          </section>
+          <section className={`${submitted ? "block" : "hidden"} bg-pink-50 dark:bg-gray-900 p-4`}>
+            <p className='text-center text-base lg:text-xl'>✔️ Your message has been sent! Thank you for the message. 😎</p>
+          </section>
         </div>
       </div>
     </section>
