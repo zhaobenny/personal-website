@@ -35,3 +35,7 @@ yarn-error.log*
 
 # resume no need git track
 /public/Resume.pdf
+
+# Cypress
+cypress/videos
+cypress/screenshots

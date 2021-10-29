@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "cross-env ANALYZE=true next build"
+    "analyze": "cross-env ANALYZE=true next build",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -27,6 +31,7 @@
     "react-dom": "17.0.2",
     "react-pdf": "^5.4.0",
     "sass": "^1.43.2",
+    "sharp": "^0.29.2",
     "xss": "^1.0.10"
   },
   "devDependencies": {
@@ -36,9 +41,11 @@
     "@types/react-anchor-link-smooth-scroll": "^1.0.2",
     "@types/react-pdf": "^5.0.7",
     "autoprefixer": "^10.3.7",
+    "cypress": "^8.7.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.9",
+    "start-server-and-test": "^1.14.0",
     "tailwindcss": "^2.2.16",
     "typescript": "4.4.3"
   }
