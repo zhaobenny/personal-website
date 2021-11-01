@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Docker-Build-Deploy
+name: Docker-Test-Build-Deploy
 
 # Controls when the workflow will run
 on:
@@ -15,8 +15,27 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+
+  test:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.5.0-chrome94-ff93
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set Github API token in .env
+        run: |
+          echo "GITHUB_AUTH_TOKEN=${{ secrets.GITHUBAUTH_TOKEN }}" > .env
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: chrome
+          command: npm run e2e:headless
+          build: npm run build
+
   build:
+    needs: test
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -37,10 +56,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
-        name: Build Docker Image and push
+        name: Build Docker Image and Push (deploy it!)
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
           tags: puredefinition/personal-website:prod
           build-args: GITHUB=${{ secrets.GITHUBAUTH_TOKEN }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
