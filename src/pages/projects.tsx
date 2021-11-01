@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const getStaticProps: any = async (context: any) => {
   try {
-    let token: any = process.env.GITHUB_AUTH_TOKEN;
+    const token: any = process.env.GITHUB_AUTH_TOKEN;
     const username: String = "zhaobenny";
     let response = await axios.get(
       `https://api.github.com/search/repositories?q=user:${username}+sort:updated`,
@@ -14,7 +14,7 @@ export const getStaticProps: any = async (context: any) => {
         },
       }
     );
-    let data: any = response.data['items'];
+    const data: any = response.data['items'];
     if (!data) {
       return {
         notFound: true,

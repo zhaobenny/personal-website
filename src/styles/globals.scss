@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .wave {
   animation-name: wave-animation;
   animation-duration: 3.5s;
@@ -68,7 +66,7 @@ $total: 10;
       left: (random(50) * 1%);
       transform: scale(.3 * $i - .6) rotate(random(360) + deg);
     }
-    @media screen and (max-width: 360px) {
+    @media screen and (max-width: 400px) {
       left: (random(2) * 0.5%);
       transform: scale(.1 * $i - .6) rotate(random(360) + deg);
     }
