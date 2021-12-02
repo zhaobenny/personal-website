@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="flex min-h-screen justify-center items-center z-10 backdrop-blur-sm">
         <div className="text-black dark:text-white font-semibold">
           <h2 className="text-2xl sm:text-4xl lg:text-6xl select-none">
-            <span className="wave">👋</span> Hello there,
+            <span className="wave font-normal">👋</span> Hello there,
           </h2>
           <h1 className="text-4xl sm:text-6xl lg:text-8xl md:mt-5 pb-5 select-none text-center text-transparent bg-clip-text bg-gradient-to-bl from-blue-400 to-fuchsia-600">
             I am Benny Zhao
