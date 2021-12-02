@@ -4,8 +4,6 @@ services:
     container_name: personalwebsite
     image: insertreponame/personal-website
     restart: unless-stopped
-    ports:
-      - 3000
     environment:
       - GITHUB_AUTH_TOKEN=insertkey
       - HCAPTCHA_SECRET_KEY=insertkey
