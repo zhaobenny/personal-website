@@ -16,23 +16,21 @@ export default function Questions() {
           </dt>
           <dd className="mb-14">
             <p className="text-justify">
-              Hey, I am Benny Zhao. I am currently an undergraduate student at Simon Fraser University, pursing a degree in Computing Science. As of now, I am in my 4th year.
-              I always enjoyed tinkering with technology since I was young, and also wanted to tinker more with it.
-              So when I found myself exposed to programming at a high school infomation technology class,
-              I found that it was exciting and something to be passionate about.
-              Thus my area of study in university was decided.
+              Hi there, I am Benny Zhao. <br/>
+              I am a 4th year computing science student at Simon Fraser University that enjoys creating software to benefit people!
+              <br/>
+              My most recent work include developing a data portal for bee microbiome data as a co-op software developer at&nbsp;&nbsp;Agriculture and Agri-Food Canada.
+              Check out my <Link href="/resume"><a className='underline hover:opacity-90'>resume</a></Link> for more details on that!
             </p>
           </dd>
           <dt className="mb-4">
             <h3 className="text-xl font-semibold">
-              What&apos;s with the cool domain name?
+              What&apos;s with the cool domain name? 🎉
             </h3>
           </dt>
           <dd className="mb-14">
             <p className="text-justify">
-              Bubble tea is good. Also, I paid a good price for domain.
-              <br />
-              I am using the domain to its fullest potential!
+              It&apos;s a fun and interesting name, and I also found a good deal for the domain name.
             </p>
           </dd>
           <dt className="mb-4">
@@ -42,10 +40,11 @@ export default function Questions() {
           </dt>
           <dd className="mb-14">
             <p className="text-justify">
-              It is built using <a href="https://nextjs.org/" className='underline hover:opacity-90'>Next.js</a> in Typescript
-              and for CSS, <a href="https://tailwindcss.com/" className='underline hover:opacity-90'>Tailwind</a> and Sass is used.
+              This site is built using Next.js and Tailwind CSS, and the source code is on this <a href="https://github.com/zhaobenny/personal-website"  className='underline hover:opacity-90'>Github repo</a>.
               <br />
-              The website itself is selfhosted as a Docker container on a VPS behind Cloudflare CDNs.
+              Behind the scenes, the entire website is containerized and deployed on a Ubuntu server.
+              <br />
+              ✅ Uptime stats available <a href="https://uptime.bubbletea.party/status/website"  className='underline hover:opacity-90  umami--click--goto-uptime'>here</a>.
             </p>
           </dd>
           <dt className="mb-4">
@@ -56,7 +55,7 @@ export default function Questions() {
           <dd className="mb-14">
             <p className="text-justify">
               Check out my <Link href="/projects"><a className='underline hover:opacity-90'>projects</a></Link> page where you can see some of the recent things I been working on!
-              <br /> Take a look at my <Link href="/resume"><a className='underline hover:opacity-90'>resume</a></Link> too!
+              <br/> Or take a look at my <Link href="/resume"><a className='underline hover:opacity-90'>resume</a></Link>!
             </p>
           </dd>
         </dl>
