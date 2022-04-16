@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import React, { useEffect, useRef, useState } from 'react';
-import { Page, Document, pdfjs } from 'react-pdf'
+import React, { useEffect, useState } from 'react';
+import PDFViewer from '../components/resume/pdf-viewer';
 
 
 function useWidth() {
@@ -22,20 +22,14 @@ function useWidth() {
 }
 
 const Resume = () => {
-  pdfjs.GlobalWorkerOptions.workerSrc = 'pdf.worker.min.js';
-  const documentWrapperRef: React.RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   const size: number = useWidth();
   return (
     <>
       <Head>
         <title>Benny Zhao | Resume</title>
       </Head>
-      <section className='flex flex-1 flex-col items-center justify-center mt-2' ref={documentWrapperRef}>
-        <a href='./Resume.pdf' className='umami--click--view-resume'>
-          <Document file="./Resume.pdf" className='border-gray-800 dark:border-0 border-4'>
-            <Page className="w-full" pageNumber={1} width={size / 2.5 || 500} />
-          </Document>
-        </a>
+      <section className='flex flex-1 flex-col items-center justify-center mt-2'>
+        <PDFViewer size={size} />
         <a href='./Resume.pdf' download='Benny_Zhao_Resume.pdf'>
           <button className="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none rounded text-lg dark:mt-0 mt-3 hover:opacity-90  umami--click--download-resume" >Save as PDF</button>
         </a>
