@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Questions() {
   return (
-    <div className="py-20 px-4 bg-pink-50 dark:bg-gray-900">
+    <div className="py-20 px-4 bg-pink-50 dark:bg-neutral-900">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row">
         <h2 className="mr-8 mb-3 w-full md:w-1/3 text-3xl font-semibold leading-9" id="FAQ">
           About Me
