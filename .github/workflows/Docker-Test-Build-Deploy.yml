@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     container: 
       image: cypress/browsers:node16.5.0-chrome94-ff93
-      options: --user 1001  # ← THIS IS THE IMPORTANT LINE!
+      options: --user 1001  
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/cache@v2
         with:
           # See here for caching with `yarn` https://github.com/actions/cache/blob/main/examples.md#node---yarn or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
@@ -53,7 +53,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -67,13 +67,17 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      -
-        name: Build Docker Image and Push (deploy it!)
-        id: docker_build
-        uses: docker/build-push-action@v2
+          
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
           push: true
-          tags: ${{ github.actor }}/personal-website:prod
-          build-args: GITHUB=${{ secrets.VIEW_REPOS_TOKEN }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
