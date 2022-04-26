@@ -75,5 +75,6 @@ jobs:
         with:
           context: .
           push: true
+          build-args: GITHUB=${{ secrets.VIEW_REPOS_TOKEN }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
