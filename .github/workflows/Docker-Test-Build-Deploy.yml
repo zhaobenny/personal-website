@@ -24,7 +24,7 @@ jobs:
 
       - name: Set Github API token in .env
         run: |
-          echo "GITHUB_AUTH_TOKEN=${{ secrets.GITHUBAUTH_TOKEN }}" > .env
+          echo "GITHUB_AUTH_TOKEN=${{ secrets.VIEW_REPOS_TOKEN }}" > .env
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
@@ -50,18 +50,19 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       -
-        name: Login to DockerHub
+        name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       -
         name: Build Docker Image and Push (deploy it!)
         id: docker_build
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: puredefinition/personal-website:prod
-          build-args: GITHUB=${{ secrets.GITHUBAUTH_TOKEN }}
+          tags: ${{ github.actor }}/personal-website:prod
+          build-args: GITHUB=${{ secrets.VIEW_REPOS_TOKEN }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
