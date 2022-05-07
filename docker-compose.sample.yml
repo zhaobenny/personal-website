@@ -6,8 +6,6 @@ services:
     restart: unless-stopped
     environment:
       - GITHUB_AUTH_TOKEN=insertkey
-      - HCAPTCHA_SECRET_KEY=insertkey
-      - SENDGRID_API_KEY=insertkey
     volumes:
       - type: bind
         source: ./Resume.pdf
