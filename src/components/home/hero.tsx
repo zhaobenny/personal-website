@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the 
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
   faChevronDown,
-  faEdit,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -27,9 +26,6 @@ export default function Hero() {
             <a href="https://www.linkedin.com/in/zhaobenny00/">
               <FontAwesomeIcon icon={faLinkedin} className="hover:opacity-50 umami--click--linkedin-icon" />
             </a>
-            <AnchorLink href="#contact">
-              <FontAwesomeIcon icon={faEdit} className="hover:opacity-50 umami--click--contact-icon" />
-            </AnchorLink>
             <a href="mailto:benny_zhao@sfu.ca">
               <FontAwesomeIcon icon={faEnvelope} className="hover:opacity-50 umami--click--mail-icon" />
             </a>
