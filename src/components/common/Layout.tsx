@@ -1,5 +1,3 @@
-import Navbar from "./navbar";
-import Footer from "./footer";
 import Head from "next/head";
 
 const Layout = ({ children }: { children: any }) => {
@@ -16,11 +14,7 @@ const Layout = ({ children }: { children: any }) => {
         <script async defer data-website-id="37e0f55d-8b45-41c1-9c48-be796a5c49c1" src="https://analytics.bubbletea.party/umami.js"
           data-domains="me.bubbletea.party, bubbletea.party"/>
       </Head>
-      <section className="flex flex-col min-h-screen">
-        <Navbar />
-        {children}
-        <Footer />
-      </section>
+      {children}
     </>
   );
 };

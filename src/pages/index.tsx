@@ -1,17 +1,26 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+
 import Hero from '../components/home/hero'
 import Questions from "../components/home/questions"
+import Footer from '../components/common/footer'
+import Navbar from '../components/common/navbar'
 
 const Home: NextPage = () => {
   return (
-    <section>
+    <>
       <Head>
         <title>Benny Zhao | Home</title>
       </Head>
-      <Hero />
-      <Questions />
-    </section>
+      <section className="min-h-screen flex flex-col">
+        <Navbar />
+        <Hero />
+      </section>
+      <section className="min-h-screen flex flex-col">
+        <Questions />
+        <Footer />
+      </section>
+    </>
   )
 }
 

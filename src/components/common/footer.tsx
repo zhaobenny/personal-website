@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="w-full text-grey-500 dark:text-grey-400 backdrop-blur">
-      <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <footer className="w-full mt-auto text-grey-500 dark:text-grey-400 backdrop-blur">
+      <div className="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
         <div className="flex font-medium items-center md:justify-start justify-center">
           <Image src="/logo.png" alt='A simple image of a poorly drawn bubble tea, probably using MS Paint.' height={35} width={35} />
           <span className="ml-3 text-xl">Bubbletea.party</span>

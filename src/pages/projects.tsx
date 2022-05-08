@@ -1,6 +1,8 @@
 import Repocard from '../components/projects/repocard'
 import Head from 'next/head'
 import axios from 'axios';
+import Navbar from '../components/common/navbar';
+import Footer from '../components/common/footer';
 
 export const getStaticProps: any = async (context: any) => {
   try {
@@ -34,10 +36,11 @@ export const getStaticProps: any = async (context: any) => {
 
 const Projects = ((props: any) => {
   return (
-    <>
+    <section className="min-h-screen flex flex-col">
       <Head>
         <title>Benny Zhao | Projects</title>
       </Head>
+      <Navbar />
       <div className='flex flex-1 flex-col items-center mx-3'>
         <h1 className="text-4xl lg:text-6xl pb-1 mt-2 font-semibold text-transparent bg-clip-text bg-gradient-to-bl from-blue-400 to-fuchsia-600">Projects</h1>
         <p className="text-sm sm:text-lg mb-2 lg:mt-5 lg:mb-12">Current repos from my Github</p>
@@ -48,7 +51,8 @@ const Projects = ((props: any) => {
             ))}
         </section>
       </div>
-    </>
+      <Footer />
+    </section>
   )
 })
 
