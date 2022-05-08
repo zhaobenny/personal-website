@@ -29,9 +29,6 @@ export default function Navbar() {
             <Link href="/resume">
               <a className="mr-5 dark:hover:text-white">Resume</a>
             </Link>
-            <Link href="/#">
-              <a className="mr-5 dark:hover:text-white opacity-50">Setup</a>
-            </Link>
             <button aria-label="Toggle Dark Mode" type="button" className="bg-pink-50 dark:bg-gray-800
             border-0  py-1 px-3 focus:outline-none
             hover:bg-gray-300 dark:hover:bg-gray-700 rounded text-base md:mt-0 umami--click--dark-mode-toggle"
