@@ -5,6 +5,7 @@ import Hero from '../components/home/hero'
 import Questions from "../components/home/questions"
 import Footer from '../components/common/footer'
 import Navbar from '../components/common/navbar'
+import FloatingShapes from '../components/ambientBackground/ambientBackground'
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
       <section className="min-h-screen flex flex-col">
         <Navbar />
         <Hero />
+        <FloatingShapes/>
       </section>
       <section className="min-h-screen flex flex-col">
         <Questions />

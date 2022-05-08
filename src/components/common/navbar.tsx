@@ -11,8 +11,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <>
-      <header className="text-black-100 dark:text-gray-300 body-font backdrop-blur">
+      <header className="text-black-100 dark:text-gray-300 body-font backdrop-blur z-10">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <Link href="/">
             <a className="flex title-font font-medium items-center text-black-100 dark:text-white mb-4 md:mb-0">
@@ -46,6 +45,5 @@ export default function Navbar() {
           </nav>
         </div>
       </header>
-    </>
   );
 }

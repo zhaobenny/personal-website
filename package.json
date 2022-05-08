@@ -28,8 +28,12 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.0.0",
     "react-pdf": "^5.7.2",
+    "react-tsparticles": "^2.0.6",
     "sass": "^1.50.0",
-    "sharp": "^0.29.3"
+    "sharp": "^0.29.3",
+    "tsparticles": "^2.0.6",
+    "tsparticles-engine": "^2.0.6",
+    "tsparticles-shape-confetti": "^1.14.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

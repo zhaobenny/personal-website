@@ -1,5 +1,5 @@
 import React from "react";
-import FloatingShapes from "../ambientBackground/floatingShapes";
+import FloatingShapes from "../ambientBackground/ambientBackground";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -10,8 +10,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 export default function Hero() {
   return (
-    <>
-      <div className="flex min-h-screen justify-center items-center z-10 backdrop-blur-sm">
+      <div className="flex grow justify-center items-center z-10 backdrop-blur-sm">
         <div className="text-black dark:text-white font-semibold">
           <h2 className="text-2xl sm:text-4xl lg:text-6xl select-none">
             <span className="wave font-normal">👋</span> Hello there,
@@ -40,7 +39,5 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <FloatingShapes />
-    </>
   );
 }
