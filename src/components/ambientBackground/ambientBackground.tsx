@@ -10,18 +10,31 @@ const particlesOptions: ISourceOptions = {
         zIndex: 0
     },
     particles: {
+        reduceDuplicates: true,
         move: {
             bounce: false,
             direction: "top",
             enable: true,
             outModes: "out",
-            random: false,
+            random: true,
             angle: 45,
             speed: {
                 min: 2,
                 max: 7,
             },
-            straight: false
+            straight: false,
+            gravity: {
+                acceleration: {
+                    min: 1,
+                    max: 2
+                },
+                enable: true,
+                inverse: true,
+                maxSpeed: {
+                    min: 2,
+                    max: 7
+                },
+            },
         },
         rotate: {
             value: {
@@ -35,10 +48,10 @@ const particlesOptions: ISourceOptions = {
                     max: 5,
                 }
             }
+
         },
         number: {
-            value: 5,
-            limit: 8
+            limit: 6
         },
         opacity: {
             value: 1
